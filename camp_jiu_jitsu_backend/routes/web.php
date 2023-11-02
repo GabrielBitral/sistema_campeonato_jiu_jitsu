@@ -14,5 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+Route::get('torneios', function () {
+    return view('torneios');
+});
+
+Route::get('area_restrita', function () {
+    return view('area_atleta.area_restrita');
+});
+
+require __DIR__.'/auth.php';

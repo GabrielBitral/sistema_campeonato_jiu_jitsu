@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('chave_luta', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('codigo_campeonato');
+            $table->foreign('codigo_campeonato')->references('id')->on('campeonato');
             $table->set('faixa', ['Marrom', 'Preta']);
             $table->set('peso', ['Leve', 'Pesado']);
             $table->string('atletas');
