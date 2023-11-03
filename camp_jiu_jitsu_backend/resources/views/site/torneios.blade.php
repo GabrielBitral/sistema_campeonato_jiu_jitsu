@@ -108,7 +108,7 @@
                         Santos-SP
                     </p>
                 </div>
-                <a href="./integra.html" title="Saiba mais sobre Campeonato regional santista 2023"
+                <a href="integra" title="Saiba mais sobre Campeonato regional santista 2023"
                     class="absolute inset-0"></a>
             </article>
             <article
@@ -146,7 +146,7 @@
                         São Paulo-SP
                     </p>
                 </div>
-                <a href="./integra.html" title="Saiba mais sobre Campeonato regional santista 2023"
+                <a href="integra" title="Saiba mais sobre Campeonato regional santista 2023"
                     class="absolute inset-0"></a>
             </article>
             <article
@@ -183,7 +183,7 @@
                         Rio de Janeiro-RJ
                     </p>
                 </div>
-                <a href="./integra.html" title="Saiba mais sobre Campeonato regional santista 2023"
+                <a href="integra" title="Saiba mais sobre Campeonato regional santista 2023"
                     class="absolute inset-0"></a>
             </article>
             <article
@@ -221,7 +221,7 @@
                         Santos-SP
                     </p>
                 </div>
-                <a href="./integra.html" title="Saiba mais sobre Campeonato regional santista 2023"
+                <a href="integra" title="Saiba mais sobre Campeonato regional santista 2023"
                     class="absolute inset-0"></a>
             </article>
             <article
@@ -259,7 +259,7 @@
                         Santos-SP
                     </p>
                 </div>
-                <a href="./integra.html" title="Saiba mais sobre Campeonato regional santista 2023"
+                <a href="integra" title="Saiba mais sobre Campeonato regional santista 2023"
                     class="absolute inset-0"></a>
             </article>
             <article
@@ -297,7 +297,7 @@
                         São Paulo-SP
                     </p>
                 </div>
-                <a href="./integra.html" title="Saiba mais sobre Campeonato regional santista 2023"
+                <a href="integra" title="Saiba mais sobre Campeonato regional santista 2023"
                     class="absolute inset-0"></a>
             </article>
             <article
@@ -334,7 +334,7 @@
                         Rio de Janeiro-RJ
                     </p>
                 </div>
-                <a href="./integra.html" title="Saiba mais sobre Campeonato regional santista 2023"
+                <a href="integra" title="Saiba mais sobre Campeonato regional santista 2023"
                     class="absolute inset-0"></a>
             </article>
             <article
@@ -372,7 +372,7 @@
                         Santos-SP
                     </p>
                 </div>
-                <a href="./integra.html" title="Saiba mais sobre Campeonato regional santista 2023"
+                <a href="integra" title="Saiba mais sobre Campeonato regional santista 2023"
                     class="absolute inset-0"></a>
             </article>
             <article
@@ -410,7 +410,7 @@
                         Santos-SP
                     </p>
                 </div>
-                <a href="./integra.html" title="Saiba mais sobre Campeonato regional santista 2023"
+                <a href="integra" title="Saiba mais sobre Campeonato regional santista 2023"
                     class="absolute inset-0"></a>
             </article>
             <article
@@ -448,7 +448,7 @@
                         São Paulo-SP
                     </p>
                 </div>
-                <a href="./integra.html" title="Saiba mais sobre Campeonato regional santista 2023"
+                <a href="integra" title="Saiba mais sobre Campeonato regional santista 2023"
                     class="absolute inset-0"></a>
             </article>
             <article
@@ -485,7 +485,7 @@
                         Rio de Janeiro-RJ
                     </p>
                 </div>
-                <a href="./integra.html" title="Saiba mais sobre Campeonato regional santista 2023"
+                <a href="integra" title="Saiba mais sobre Campeonato regional santista 2023"
                     class="absolute inset-0"></a>
             </article>
             <article
@@ -523,7 +523,7 @@
                         Santos-SP
                     </p>
                 </div>
-                <a href="./integra.html" title="Saiba mais sobre Campeonato regional santista 2023"
+                <a href="integra" title="Saiba mais sobre Campeonato regional santista 2023"
                     class="absolute inset-0"></a>
             </article>
         </div>

@@ -2,12 +2,15 @@
 
 namespace App\Http\Requests\Auth;
 
+use App\Models\User;
 use Illuminate\Auth\Events\Lockout;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
+use UnexpectedValueException;
 
 class LoginRequest extends FormRequest
 {
@@ -28,7 +31,7 @@ class LoginRequest extends FormRequest
     {
         return [
             'email' => ['required', 'string', 'email'],
-            'password' => ['required', 'string'],
+            'senha' => ['required', 'string'],
         ];
     }
 
@@ -41,13 +44,19 @@ class LoginRequest extends FormRequest
     {
         $this->ensureIsNotRateLimited();
 
-        if (! Auth::attempt($this->only('email', 'password'), $this->boolean('remember'))) {
+        $usuario = User::where('email', $this->get('email'))->first();
+        
+        if (is_null($usuario)) {
+            throw new UnexpectedValueException('E-mail não encontrado.', 400);
+        }
+
+        if (!Hash::check($this->get('senha'), $usuario->senha)) {
             RateLimiter::hit($this->throttleKey());
 
-            throw ValidationException::withMessages([
-                'email' => trans('auth.failed'),
-            ]);
+            throw new UnexpectedValueException('Senha incorreta.', 400);
         }
+
+        Auth::login($usuario);
 
         RateLimiter::clear($this->throttleKey());
     }

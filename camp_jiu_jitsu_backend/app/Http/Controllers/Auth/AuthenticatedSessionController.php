@@ -25,11 +25,17 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request): RedirectResponse
     {
+        $tipoLogin = ($request->tipo_login);
+
         $request->authenticate();
 
         $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        if ($tipoLogin === 'site') {
+            return redirect()->route('area_restrita');
+        } else {
+            return redirect()->route('painel');
+        }
     }
 
     /**
