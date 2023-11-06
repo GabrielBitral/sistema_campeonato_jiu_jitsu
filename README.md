@@ -4,6 +4,7 @@
 - Frontend fornecido foi transformado em arquivos laravel blade;
 
 ## ⌨ Como rodar:
+- Criar uma pasta 'upload' na pasta public;
 - Modificar o banco de dados no .env;
 - Gerar generation key (Laravel);
 - Rodar comando para gerar tabelas no banco e os úsuarios(`php artisan migrate`);
