@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,10 +17,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index');
-});
-
-Route::get('torneios', function () {
-    return view('site.torneios');
 });
 
 Route::get('integra', function () {
@@ -72,21 +69,9 @@ Route::get('cadastrar', function () {
     return view('painel.cadastrar');
 });
 
-Route::get('cadastrar_campeonato', function () {
-    return view('painel.cadastrar_campeonato');
-});
-
 Route::get('editar', function () {
     return view('painel.editar');
 });
-
-Route::get('login_painel', function () {
-    return view('painel.login');
-});
-
-Route::get('painel', function () {
-    return view('painel.index');
-})->name('painel');
 
 Route::get('recuperar_senha_painel', function () {
     return view('painel.recuperar_senha');

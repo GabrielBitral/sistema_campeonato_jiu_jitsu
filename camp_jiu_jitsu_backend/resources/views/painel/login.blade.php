@@ -25,26 +25,26 @@
                 </div>
 
                 <div class="col-6 d-flex align-items-center p-5">
-                    <form action="painel" class="form w-100">
+                    <form method="POST" action="{{ route('login_painel') }}" class="form w-100">
                         @csrf
                         <h2 class="h4 text-light mb-4">Painel Administrativo</h2>
-
                         <div class="row row-gap-3">
                             <div class="col-12 form-group text-light">
-                                <input type="hidden" name="tipo_login" id="tipo_login" value="{{'painel'}}" />
+                                <input type="hidden" name="tipo_login" id="tipo_login" value="{{ 'painel' }}" />
                                 <label for="email">E-mail:</label>
                                 <input type="email" class="form-control bg-dark border-dark text-light" id="email"
-                                    placeholder="example@kbrtec.com.br">
+                                    name="email" placeholder="example@kbrtec.com.br" required>
                                 <!-- <small class="bg-danger rounded py-1 px-2 mt-1 d-block text-light">Erro</small> -->
                             </div>
 
                             <div class="col-12 form-group text-light">
-                                <label for="password">Senha:</label>
+                                <label for="senha">Senha:</label>
                                 <input type="password" class="form-control bg-dark border-dark text-light"
-                                    id="password">
+                                    id="senha" name="senha" required>
                                 <!-- <small class="bg-danger rounded py-1 px-2 mt-1 d-block text-light">Erro</small> -->
 
-                                <a href="recuperar_senha_painel" class="link-light"><small>Esqueci minha senha</small></a>
+                                <a href="recuperar_senha_painel" class="link-light"><small>Esqueci minha
+                                        senha</small></a>
                             </div>
 
                             <div class="col-12">

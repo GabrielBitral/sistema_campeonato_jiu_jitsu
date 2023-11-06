@@ -13,12 +13,11 @@ return new class extends Migration
     {
         Schema::create('atleta', function (Blueprint $table) {
             $table->id();
-            $table->string('nome')->nullable(false);
+            $table->unsignedBigInteger('id_usuario');
+            $table->foreign('id_usuario')->references('id')->on('users');
             $table->date('data_nascimento')->nullable(false);
             $table->string('cpf')->nullable(false);
             $table->set('sexo', ['Masculino', 'Feminino'])->nullable(false);
-            $table->string('email')->nullable(false);
-            $table->string('senha')->nullable(false);
             $table->string('equipe')->nullable(false);
             $table->set('faixa', ['Marrom', 'Preta'])->nullable(false);
             $table->set('peso', ['Leve', 'Pesado'])->nullable(false);

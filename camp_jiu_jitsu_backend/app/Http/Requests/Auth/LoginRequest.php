@@ -40,7 +40,7 @@ class LoginRequest extends FormRequest
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function authenticate(): void
+    public function authenticate($tipoLogin)
     {
         $this->ensureIsNotRateLimited();
 
@@ -48,6 +48,12 @@ class LoginRequest extends FormRequest
         
         if (is_null($usuario)) {
             throw new UnexpectedValueException('E-mail não encontrado.', 400);
+        }
+
+        if($usuario->tipo === 0 && $tipoLogin === 'painel') {
+            return redirect()->route('login_painel')->with('erro', 'Usuário inválido');
+        } elseif (($usuario->tipo === 1 || $usuario->tipo === 2) && $tipoLogin === 'site') {
+            return redirect()->route('login')->with('erro', 'Usuário inválido');
         }
 
         if (!Hash::check($this->get('senha'), $usuario->senha)) {
@@ -59,6 +65,8 @@ class LoginRequest extends FormRequest
         Auth::login($usuario);
 
         RateLimiter::clear($this->throttleKey());
+
+        return $usuario->tipo;
     }
 
     /**

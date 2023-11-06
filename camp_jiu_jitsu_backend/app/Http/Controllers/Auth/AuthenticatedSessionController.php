@@ -20,19 +20,26 @@ class AuthenticatedSessionController extends Controller
         return view('auth.login');
     }
 
+    public function createPainel(): View
+    {
+        return view('painel.login');
+    }
+
     /**
      * Handle an incoming authentication request.
      */
     public function store(LoginRequest $request): RedirectResponse
     {
-        $tipoLogin = ($request->tipo_login);
+        $tipoLogin = $request->tipo_login;
 
-        $request->authenticate();
+        $tipoUsuario = $request->authenticate($tipoLogin);
 
         $request->session()->regenerate();
 
-        if ($tipoLogin === 'site') {
+        if ($tipoUsuario === 0) {
             return redirect()->route('area_restrita');
+        } elseif ($tipoUsuario === 1) {
+            return redirect()->route('campeonatos_painel');
         } else {
             return redirect()->route('painel');
         }
@@ -50,5 +57,16 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerateToken();
 
         return redirect('/');
+    }
+
+    public function destroyPainel(Request $request): RedirectResponse
+    {
+        Auth::guard('web')->logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('login_painel');
     }
 }
